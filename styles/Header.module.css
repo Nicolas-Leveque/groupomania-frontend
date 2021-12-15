@@ -1,0 +1,15 @@
+.headerright {
+  display: flex;
+
+}
+
+.link {
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+  margin-right: 10px;
+}
+
+/* img {
+  width: 50%;
+} */
