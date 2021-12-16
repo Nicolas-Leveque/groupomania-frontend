@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
-import Test from '../components/Test'
+import LoginRegister from '../components/LoginRegister'
 
 export default function Home() {
   return (
@@ -13,6 +12,9 @@ export default function Home() {
         <link rel="icon" href="/public/icon.png" />
       </Head>
       <Header />
+      <LoginRegister />
+      {console.log('adresse', process.env.BACKEND_ADDRESS)}
+
       
       
     </div>

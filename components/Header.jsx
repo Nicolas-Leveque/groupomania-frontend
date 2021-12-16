@@ -32,7 +32,7 @@ export default function Header() {
         </a>
       </Link>
       
-      <div className={styles.headerright}>
+      <div className={styles.headerRight}>
         <Link href="/profil">
           <a className={styles.link}>Profil</a>
         </Link>
