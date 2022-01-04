@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import UserProfil from '../components/UserProfil'
 
 export default function userProfil() {
     
@@ -12,7 +13,7 @@ export default function userProfil() {
                 <link rel="icon" href="/public/icon.png"/>
             </Head>
             <Header/>
-            <p>page de profil</p>
+            <UserProfil />
             <Footer/>
         </div>
     );
