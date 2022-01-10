@@ -15,7 +15,7 @@ export default function Header() {
   let {setReload} = value.setReload
   const handleLogout = () => {
     localStorage.clear()
-    setReload(true)
+    // setReload(true)
     router.push('/')
   }
   return (
