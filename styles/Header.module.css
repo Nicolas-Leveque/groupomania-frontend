@@ -1,9 +1,13 @@
+.header {
+	width: 100vw;
+}
+
 .headerRight {
-  display: flex;
+	display: flex;
 }
 .link {
-  outline: none;
-  text-decoration: none;
-  color: #fff;
-  margin-right: 10px;
+	outline: none;
+	text-decoration: none;
+	color: #fff;
+	margin-right: 10px;
 }
