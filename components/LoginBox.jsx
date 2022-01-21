@@ -30,7 +30,6 @@ export default function LoginBox() {
 				localStorage.setItem('token', json.token);
 				localStorage.setItem('id', json.user.id);
 				localStorage.setItem('admin', json.user.admin);
-				localStorage.setItem('user', json.user.fullName);
 				router.push('/frontpage');
 			})
 			.catch((e) => {

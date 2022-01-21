@@ -1,0 +1,9 @@
+.content {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.posts {
+	display: flex;
+	flex-direction: column;
+}
