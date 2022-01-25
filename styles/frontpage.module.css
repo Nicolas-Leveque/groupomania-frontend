@@ -1,6 +1,13 @@
 .content {
 	display: flex;
-	flex-direction: row-reverse;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.trigger {
+	margin-top: 5%;
+	width: 60%;
 }
 
 .posts {

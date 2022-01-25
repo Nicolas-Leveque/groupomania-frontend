@@ -25,7 +25,7 @@ export default function RegisterBox() {
 		const myHeaders = new Headers({ 'Content-Type': 'application/json' });
 
 		if (password === passwordCheck) {
-			fetch(`${process.env.NEXT_PUBLIC_BACKEND}/signup`, {
+			fetch(`api/signup`, {
 				method: 'post',
 				headers: myHeaders,
 				body: JSON.stringify(registerRequest),

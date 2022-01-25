@@ -1,6 +1,12 @@
+import { useState } from 'react';
 import styles from '../styles/ShareForm.module.css';
 
 export default function ShareForm() {
+	const [showForm, setShowForm] = useState(false);
+	const handleShowShare = (e) => {
+		e.preventDefault();
+		setShowForm(true);
+	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const formData = new FormData(e.target);
@@ -14,16 +20,25 @@ export default function ShareForm() {
 			headers: myHeaders,
 			body: JSON.stringify(dataObject),
 		}).then((response) => console.log(response));
+		setShowForm(false);
 		e.target.reset();
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<div className={styles.inputGroup}>
-				<input type="text" name="titre" placeholder="Titre" required />
-				<textarea type="text" name="contenu" rows="5" />
-				<button className={styles.trigger}>Envoyer</button>
-			</div>
-		</form>
+		<div className={styles.content}>
+			<button className={styles.trigger} onClick={handleShowShare}>
+				Partager
+			</button>
+			{showForm && (
+				<form onSubmit={handleSubmit} onCancel={() => setShowForm(false)}>
+					<div className={styles.inputGroup}>
+						<input type="text" name="titre" placeholder="Titre" required />
+						<textarea type="text" name="contenu" rows="5" />
+						<button>Annuler</button>
+						<button className={styles.trigger}>Envoyer</button>
+					</div>
+				</form>
+			)}
+		</div>
 	);
 }

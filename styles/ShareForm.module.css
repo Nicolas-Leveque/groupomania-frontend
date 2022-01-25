@@ -1,23 +1,34 @@
-.inputGroup {
-	margin-top: 25%;
+.content {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.inputGroup {
+	/* margin-top: 25%; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 90vw;
 }
 
 .inputGroup input {
-	margin: 10%;
+	width: 90%;
+	margin: 1% 5%;
 	border-radius: 5px;
-	border: 1px solid blue;
+	border: 1px solid black;
 }
 
 .inputGroup textarea {
-	margin: 10%;
+	width: 90%;
+	margin: 1% 5%;
 	border-radius: 5px;
-	border: 1px solid blue;
+	border: 1px solid black;
 }
 
 .trigger {
 	margin-top: 5%;
+	width: 100%;
 }

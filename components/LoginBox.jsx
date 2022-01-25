@@ -14,7 +14,7 @@ export default function LoginBox() {
 		e.preventDefault();
 		const loginRequest = { email, password };
 		const myHeaders = new Headers({ 'Content-Type': 'application/json' });
-		fetch(`${process.env.NEXT_PUBLIC_BACKEND}/login`, {
+		fetch(`api/login`, {
 			method: 'post',
 			headers: myHeaders,
 			body: JSON.stringify(loginRequest),
