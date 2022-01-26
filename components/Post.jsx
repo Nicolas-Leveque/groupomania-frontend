@@ -11,7 +11,7 @@ export default function Post({ post }) {
 			<div className={styles.userInfo}>
 				<div className={styles.infoPartage}>
 					<p>
-						{post.user.firstName} {post.user.lastName}
+						{post.author.firstName} {post.author.lastName}
 					</p>
 					<p>{post.createdAt}</p>
 				</div>
@@ -21,7 +21,7 @@ export default function Post({ post }) {
 					<a>
 						<h3>{post.titre}</h3>
 						<p>{post.contenu}</p>
-						<p>{post.comments.length} Commentaires</p>
+						<p>{post.Comment.length} Commentaires</p>
 					</a>
 				</Link>
 			</div>

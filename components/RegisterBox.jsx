@@ -21,11 +21,10 @@ export default function RegisterBox() {
 			lastName,
 			password,
 		};
-		console.log(registerRequest);
 		const myHeaders = new Headers({ 'Content-Type': 'application/json' });
 
 		if (password === passwordCheck) {
-			fetch(`api/signup`, {
+			fetch('api/signup', {
 				method: 'post',
 				headers: myHeaders,
 				body: JSON.stringify(registerRequest),

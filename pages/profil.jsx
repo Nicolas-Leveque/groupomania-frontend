@@ -12,7 +12,7 @@ export default function Profil() {
 			'Content-Type': 'application/json',
 			Authorization: 'Bearer ' + localStorage.getItem('token'),
 		});
-		fetch(`${process.env.NEXT_PUBLIC_BACKEND}/me`, {
+		fetch(`api/user/getUser`, {
 			method: 'get',
 			headers: myHeaders,
 		})

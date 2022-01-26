@@ -11,13 +11,13 @@ export default function Frontpage() {
 
 	useEffect(() => {
 		setIsLoading(true);
-		const myHeaders = new Headers({
-			'Content-Type': 'application/json',
-			Authorization: 'Bearer ' + localStorage.getItem('token'),
-		});
-		fetch(`${process.env.NEXT_PUBLIC_BACKEND}/post`, {
+		// const myHeaders = new Headers({
+		// 	'Content-Type': 'application/json',
+		// 	Authorization: 'Bearer ' + localStorage.getItem('token'),
+		// });
+		fetch('api/post/getAll', {
 			method: 'get',
-			headers: myHeaders,
+			// headers: myHeaders,
 		})
 			.then((response) => response.json())
 			.then((json) => {
@@ -34,11 +34,13 @@ export default function Frontpage() {
 			<Header />
 			<div className={styles.content}>
 				<ShareForm />
-				<div className={styles.posts}>
-					{data.map((data, idx) => {
-						return <Post post={data} key={idx} />;
-					})}
-				</div>
+				{data && (
+					<div className={styles.posts}>
+						{data.map((data, idx) => {
+							return <Post post={data} key={idx} />;
+						})}
+					</div>
+				)}
 			</div>
 			<Footer />
 		</div>

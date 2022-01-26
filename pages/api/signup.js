@@ -5,16 +5,20 @@ const bcrypt = require('bcrypt');
 export default async function signup(req, res) {
 	try {
 		const userInfo = { ...req.body };
+
 		if (userInfo.email === 'admin@groupomania.fr') {
 			userInfo.admin = true;
 		} else {
-			userInfo = false;
+			userInfo.admin = false;
 		}
+		console.log('1', userInfo);
 		const hashedPassword = await bcrypt.hash(userInfo.password, 10);
 		userInfo.password = hashedPassword;
+
 		const user = await prisma.user.create({
 			data: { ...userInfo },
 		});
+
 		const token = jwt.sign({ id: user.id.toString() }, process.env.JWT_TOKEN, {
 			expiresIn: 604800,
 		});

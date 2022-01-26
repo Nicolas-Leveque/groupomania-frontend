@@ -11,13 +11,13 @@ export default function ShareForm() {
 		e.preventDefault();
 		const formData = new FormData(e.target);
 		const dataObject = Object.fromEntries(formData);
-		const myHeaders = new Headers({
-			'Content-Type': 'application/json',
-			Authorization: 'Bearer ' + localStorage.getItem('token'),
-		});
-		fetch(`${process.env.NEXT_PUBLIC_BACKEND}/post`, {
+		// const myHeaders = new Headers({
+		// 	'Content-Type': 'application/json',
+		// 	Authorization: 'Bearer ' + localStorage.getItem('token'),
+		// });
+		fetch('api/post/create', {
 			method: 'post',
-			headers: myHeaders,
+			// headers: myHeaders,
 			body: JSON.stringify(dataObject),
 		}).then((response) => console.log(response));
 		setShowForm(false);
