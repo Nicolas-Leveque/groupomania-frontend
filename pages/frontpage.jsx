@@ -8,6 +8,7 @@ import styles from '../styles/frontpage.module.css';
 export default function Frontpage() {
 	const [data, setData] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
+	// const router = useRouter();
 
 	useEffect(() => {
 		setIsLoading(true);
@@ -15,7 +16,7 @@ export default function Frontpage() {
 		// 	'Content-Type': 'application/json',
 		// 	Authorization: 'Bearer ' + localStorage.getItem('token'),
 		// });
-		fetch('api/post/getAll', {
+		fetch('/api/post', {
 			method: 'get',
 			// headers: myHeaders,
 		})
@@ -24,6 +25,7 @@ export default function Frontpage() {
 				setData(json);
 				setIsLoading(false);
 			});
+		// eslint-disable-next-line
 	}, []);
 
 	if (isLoading) {

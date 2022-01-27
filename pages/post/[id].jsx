@@ -14,28 +14,31 @@ export default function DetailPost() {
 
 	useEffect(() => {
 		setIsLoading(true);
-		const myHeaders = new Headers({
-			'Content-Type': 'application/json',
-			Authorization: 'Bearer ' + localStorage.getItem('token'),
-		});
-		fetch(`${process.env.NEXT_PUBLIC_BACKEND}/post/${id}`, {
-			method: 'get',
-			headers: myHeaders,
+
+		fetch(`/api/post/${id}`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			},
 		})
 			.then((response) => response.json())
 			.then((json) => {
 				setPostData(json);
+				console.log(postData);
+				// setIsLoading(false);
 			});
-		fetch(`${process.env.NEXT_PUBLIC_BACKEND}/comment/post/${id}`, {
-			method: 'get',
-			headers: myHeaders,
-		})
-			.then((response) => response.json())
-			.then((json) => {
-				setCommentData(json);
-				setIsLoading(false);
-			});
-	}, [id]);
+		// fetch(`/api/comment/${id}`, {
+		// 	method: 'get',
+		// 	headers: {
+		// 		'Content-Type': 'application/json',
+		// 	},
+		// })
+		// 	.then((response) => response.json())
+		// 	.then((json) => {
+		// 		setCommentData(json);
+		// 		setIsLoading(false);
+		// 	});
+	}, []);
 	if (isLoading) {
 		return <p>Loading...</p>;
 	}
@@ -44,9 +47,14 @@ export default function DetailPost() {
 		<div>
 			<Header />
 			<Post post={postData} />
-			{commentData.map((data, idx) => (
-				<Comment comment={data} key={idx} />
-			))}
+			{/* {commentData && (
+				<div>
+					{commentData.map((data, idx) => (
+						<Comment comment={data} key={idx} />
+					))}
+				</div>
+			)} */}
+
 			<Footer />
 		</div>
 	);

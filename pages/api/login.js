@@ -20,5 +20,7 @@ export default async function login(req, res) {
 			expiresIn: 604800,
 		});
 		res.status(200).send({ user, token });
-	} catch (e) {}
+	} catch (e) {
+		res.status(400).send(e);
+	}
 }

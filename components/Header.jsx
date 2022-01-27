@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import AppContext from '../AppContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -10,11 +8,9 @@ import logo from '../public/logos/icon-left-font-monochrome-white.svg';
 
 export default function Header() {
 	const router = useRouter();
-	const value = useContext(AppContext);
-	let { setReload } = value.setReload;
+
 	const handleLogout = () => {
 		localStorage.clear();
-		// setReload(true)
 		router.push('/');
 	};
 	return (

@@ -29,6 +29,11 @@
 }
 
 .trigger {
-	margin-top: 5%;
+	margin: 5%;
 	width: 100%;
+}
+
+.controls {
+	display: flex;
+	flex-direction: row;
 }
